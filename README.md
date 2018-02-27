@@ -1,5 +1,5 @@
 
-# [Fork](https://github.com/vikpe/react-webpack-babel-starter)
+# [original react-webpack-babel-starter](https://github.com/vikpe/react-webpack-babel-starter)
 
 # React Webpack Babel Starter
 Minimal starter kit with hot module replacement (HMR) for rapid development.
