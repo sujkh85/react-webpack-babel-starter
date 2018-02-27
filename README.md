@@ -1,6 +1,8 @@
 
 # [original react-webpack-babel-starter](https://github.com/vikpe/react-webpack-babel-starter)
 
+* add openBrowser, webpack-lifecycle-plugin
+
 # React Webpack Babel Starter
 Minimal starter kit with hot module replacement (HMR) for rapid development.
 
