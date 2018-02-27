@@ -2,6 +2,9 @@
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 const commonConfig = require('./common');
+const LifecyclePlugin = require('webpack-lifecycle-plugin')
+const openBrowser = require('react-dev-utils/openBrowser');
+let isFirstBrowserOpen = true;
 
 module.exports = merge(commonConfig, {
   entry: [
@@ -17,5 +20,11 @@ module.exports = merge(commonConfig, {
   plugins: [
     new webpack.HotModuleReplacementPlugin(), // enable HMR globally
     new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
+    new LifecyclePlugin({"done": (compilation, options, pluginOptions) => {
+      if(isFirstBrowserOpen){
+        isFirstBrowserOpen = false
+        openBrowser('http://localhost:8080');
+      }
+    }}), // webpack lifecyclePlugin
   ],
 });
