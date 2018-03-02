@@ -4,7 +4,7 @@ import reactLogo from 'assets/img/react_logo.svg';
 
 class App extends React.PureComponent {
   render() {
-    return (
+    return ( 
         <div className="app">
           <h1>Hello World!</h1>
           <p>Foo to the bar</p>
