@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-// import { LayerPopupContainer } from './library/layerpopup';
+import { LayerPopupContainer } from './library/layerpopup';
 import ConfigRouter from './config/ConfigRouter';
 // import WaitContainer from './common/components/waitcircle/WaitContainer';
 // import ProjectLoader from './common/ProjectLoader';
@@ -28,11 +28,10 @@ class PageContainer extends Component {
     console.log('inin?')
 		return (
 			<div>
-        ddd
 				{/* <StorageListener />
 				<CustomListener /> */}
 				<ConfigRouter {...this.props} />			
-				{/* <LayerPopupContainer {...this.props}/> */}
+				<LayerPopupContainer {...this.props}/>
 				{/* <ProjectLoader />
 				<WaitContainer /> */}
 			</div>

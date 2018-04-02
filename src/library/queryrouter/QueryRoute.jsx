@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 import {matchQueryString} from './matchQueryString';
-import StartsWith from '../StartsWith';
+// import StartsWith from '../StartsWith';
 
 class QueryRoute extends Component {
 
 	static contextTypes = {
-		router: React.PropTypes.shape({
-			history: React.PropTypes.object.isRequired,
-			route: React.PropTypes.object.isRequired,
-			staticContext: React.PropTypes.object
+		router: PropTypes.shape({
+			history: PropTypes.object.isRequired,
+			route: PropTypes.object.isRequired,
+			staticContext: PropTypes.object
 		})
 	}
 
 	static childContextTypes = {
-		router: React.PropTypes.object.isRequired
+		router: PropTypes.object.isRequired
 	}
 
 	constructor(props, context) {
@@ -30,7 +31,7 @@ class QueryRoute extends Component {
 				return true;
 			}
 		} else {
-			return StartsWith(query[queryName].toLowerCase(), path.toLowerCase());
+			return query[queryName].toLowerCase().startsWith(path.toLowerCase());
 		}
 	}
 

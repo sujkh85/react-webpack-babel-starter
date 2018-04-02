@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 import {matchQueryString} from './matchQueryString';
 import {parseQueryString} from './parseQueryString';
 
 class QuerySwitch extends Component {
 	static contextTypes = {
-		router: React.PropTypes.shape({
-			route: React.PropTypes.object.isRequired
+		router: PropTypes.shape({
+			route: PropTypes.object.isRequired
 		}).isRequired
 	}
 
 	static childContextTypes = {
-    router: React.PropTypes.object.isRequired
+    router: PropTypes.object.isRequired
   }
 
 	getChildContext() {
@@ -61,9 +62,11 @@ class QuerySwitch extends Component {
 
 	render() {
 		const { route } = this.context.router;
+		console.log('route', route)
     const { children, queryname } = this.props;
     const location = this.props.location || route.location;
-
+		console.log('queryname', queryname)
+		console.log('location', location)
 		let queryMatch, child;
 		React.Children.forEach(children, (elem) => {
 			if (!React.isValidElement(elem)) {
@@ -81,7 +84,7 @@ class QuerySwitch extends Component {
 				}
 			}
 		});
-
+		console.log('queryMatch', queryMatch)
 		if (queryMatch) {
 			return React.cloneElement(child, {location, computedQueryMatch:queryMatch});
 		} else {

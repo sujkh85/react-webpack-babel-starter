@@ -3,15 +3,17 @@ import React from 'react';
 import MainContainer from '../main/MainContainer';
 import PageNotFound from '../error/PageNotFound';
 import PageNotConnect from '../error/PageNotConnect';
-import {Switch , Route} from 'react-router-dom';
+// import {Switch , Route} from 'react-router-dom';
+import {QuerySwitch, QueryRoute, Redirect} from '../library/queryrouter/';
 
 const ConfigRouter = (props) => {
 	return(
-		<Switch {...props} queryname="pagename">
-			<Route path="/" exact component={MainContainer} />
-			<Route path="/notconnect" component={PageNotConnect}/>
-			<Route nomatch component={PageNotFound}/>
-		</Switch>
+		<QuerySwitch {...props} queryname="pagename">
+			<QueryRoute component={MainContainer} />
+      <QueryRoute path="main" component={MainContainer} />
+			<QueryRoute path="/notconnect" component={PageNotConnect}/>
+			<QueryRoute nomatch component={PageNotFound}/>
+		</QuerySwitch>
 	)
 }
 

@@ -1,4 +1,3 @@
-import StartsWith from '../StartsWith';
 
 export function matchQueryString(query, queryName, {path, exact}) {
 	if (!query[queryName]) {
@@ -13,7 +12,7 @@ export function matchQueryString(query, queryName, {path, exact}) {
 				return true;
 			}
 		} else {
-			return StartsWith(query[queryName].toLowerCase(), path.toLowerCase())
+			return query[queryName].toLowerCase().startsWith( path.toLowerCase())
 		}
 	}
 	return false;
