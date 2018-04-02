@@ -4,7 +4,26 @@ import {ShortNoticeContainer, ShortNoticeController} from 'react-short-notice';
 
 class Main extends Component {
   noticePopup=()=>{
-    Popup.noticeModal({title:'your title', message:'your message'})
+    Popup.noticeModal({
+      title:'your title', message:'your message',
+      callback:()=>{
+        console.log('done')
+      }
+    })
+  }
+
+  confirmPopup=()=>{
+    Popup.confirmModal({
+      title:'your title', message:'your message',
+      callback:(type)=>{
+        if(type === 'RIGHT'){
+          console.log('confirm')
+        }
+        else if(type === 'LEFT'){
+          console.log('cancel')
+        }
+      }
+    })
   }
 
   onClickMoveMain2=()=>{
@@ -19,7 +38,8 @@ class Main extends Component {
     return (
       <div>
         Main
-        <div onClick={this.noticePopup}>Popup</div>
+        <div onClick={this.noticePopup}>Notice Popup</div>
+        <div onClick={this.confirmPopup}>Confirm Popup</div>
         <div onClick={this.onClickMoveMain2}>move main2</div>
         <div onClick={this.onClickShortNotice}>shortNotice</div>
         <ShortNoticeContainer id="testShortNotice" timeout='2000'>

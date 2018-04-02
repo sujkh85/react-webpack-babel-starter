@@ -20,7 +20,7 @@ class ConfirmModal extends Component {
   }
 
   render() {
-    let {title="타이틀", message="내용", type="text", leftLabel="취소", rightLabel="확인"} = this.props;
+    let {title="title", message="message", type="text", leftLabel="cancel", rightLabel="confirm"} = this.props;
     return (
       <div className="popup-confirm">
         <div className="popup-header">
