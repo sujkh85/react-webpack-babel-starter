@@ -1,16 +1,15 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 import {AppContainer} from "react-hot-loader";
-import App from "components/App";
-
-const rootEl = document.getElementById("root");
+import App from "./App";
+import 'babel-polyfill';
 
 const renderComponent = (Component) => {
     ReactDOM.render(
         <AppContainer>
             <Component/>
         </AppContainer>,
-        rootEl
+        document.getElementById("root")
     );
 };
 
@@ -18,7 +17,7 @@ renderComponent(App);
 
 // Hot Module Replacement API
 if (module.hot) {
-    module.hot.accept("./components/App", () => {
+    module.hot.accept("./App", () => {
         renderComponent(App);
     });
 }

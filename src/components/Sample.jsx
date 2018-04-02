@@ -1,8 +1,9 @@
 import React from 'react';
+//이미지 및 scss로드 
 import 'assets/scss/App.scss';
 import reactLogo from 'assets/img/react_logo.svg';
 
-class App extends React.PureComponent {
+class Sample extends React.PureComponent {
   render() {
     return ( 
         <div className="app">
@@ -14,4 +15,4 @@ class App extends React.PureComponent {
   }
 }
 
-export default App;
+export default Sample;
