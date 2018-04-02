@@ -1,7 +1,17 @@
 
 # [original react-webpack-babel-starter](https://github.com/vikpe/react-webpack-babel-starter)
 
+## My Work List
+
 * add openBrowser, webpack-lifecycle-plugin
+
+* add react-router, redux
+
+* add eslint for visual stdio code
+
+* delete style-lint
+
+* add popup, short-notice
 
 # React Webpack Babel Starter
 Minimal starter kit with hot module replacement (HMR) for rapid development.
