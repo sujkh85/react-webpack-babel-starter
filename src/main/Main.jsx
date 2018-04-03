@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Popup from '../common/Popup'
 import {ShortNoticeContainer, ShortNoticeController} from 'react-short-notice';
 
-class Main extends Component {
+class Main extends React.PureComponent {
   noticePopup=()=>{
     Popup.noticeModal({
       title:'your title', message:'your message',

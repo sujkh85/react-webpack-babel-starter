@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Main2 extends Component {
+class Main2 extends React.PureComponent {
   onClickMoveMain=()=>{
     this.props.history.push('/?pagename=main')
   }
+
   render() {
     return (
       <div>
