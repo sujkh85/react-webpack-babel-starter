@@ -27,7 +27,7 @@
     "lint": "npm run lint:js && npm run lint:sass",
     "lint:js": "jshint",
     "lint:sass": "stylelint ./src/**/*.scss",
-    "start": "npm run start-dev",
+    "start": "export NODE_ENV=development && export BABEL_ENV=development && npm run start-dev",
     "start-dev": "webpack-dev-server --config=configs/webpack/dev",
     "start-prod": "npm run build && node express.js",
     "test": "jest --watch --coverage --config=configs/jest.json"
