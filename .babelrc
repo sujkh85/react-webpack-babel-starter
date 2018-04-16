@@ -1,22 +1,4 @@
 {
-  "presets": [
-    ["env", {"modules": false}],
-    "react"
-  ],
-  "plugins": [
-    "react-hot-loader/babel",
-    "transform-object-rest-spread",
-    "transform-class-properties",
-    [
-      "module-resolver", {
-      "root": ["./src"]
-    }
-    ]
-  ],
-  "env": {
-    "test": {
-      "presets": ["env", "react","babel-preset-stage-0"],
-      "plugins": ["transform-es2015-modules-commonjs"]
-    }
-  }
+  "presets":["react", "stage-0"],
+  "plugins":["transform-decorators-legacy","transform-class-properties","babel-plugin-transform-decorators"]
 }
