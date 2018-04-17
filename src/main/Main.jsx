@@ -1,16 +1,6 @@
 import React from 'react';
 import Popup from '../common/Popup'
 import {ShortNoticeContainer, ShortNoticeController} from 'react-short-notice';
-import connect from 'redux-connect-decorator'
-
-let action = ()=>{console.log('ddd')}
-
-@connect(state => ({ 
-  messages: 'ddd',
-  fetching: true,
-}), { 
-  action
-})
 
 class Main extends React.PureComponent {
   noticePopup=()=>{
@@ -45,7 +35,6 @@ class Main extends React.PureComponent {
   }
 
   render() {  
-    console.log('this.props', this.props)
     return (
       <div>
         Main
